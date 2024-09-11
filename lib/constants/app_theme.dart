@@ -13,33 +13,31 @@ class AppThemeData {
       // Matches manifest.json colors and background color.
       primaryColor: colorScheme.primary,
       appBarTheme: AppBarTheme(
-        backgroundColor: colorScheme.surface,
+        backgroundColor: colorScheme.secondary,
         elevation: 0,
         iconTheme: IconThemeData(color: colorScheme.primary),
         centerTitle: false,
       ),
       iconTheme: IconThemeData(color: colorScheme.onPrimary),
-      canvasColor: colorScheme.surface,
-      scaffoldBackgroundColor: colorScheme.surface,
+      canvasColor: colorScheme.secondary,
+      scaffoldBackgroundColor: colorScheme.secondary,
       highlightColor: Colors.transparent,
     );
   }
 
   static const ColorScheme colorScheme = ColorScheme(
-    primary: Color(0xFF322942),
-    primaryContainer: Color(0xFF241E30),
-    secondary: Color(0xFF7C7BBB),
-    secondaryContainer: Color(0xFF605FA3),
-    tertiary: Color(0xFFB8E598),
-    tertiaryContainer: Color(0xFF5A805A),
-    surface: Color(0xFF9F9DE1),
+    primary: Color(0xfff9b3ab),
+    primaryContainer: Color(0xFFae7d78),
+    secondary: Color(0xFFffefeb),
+    tertiary: Color(0xFFabf9bb),
+    tertiaryContainer: Color(0xFF78ae83),
+    surface: Color(0xFF604039),
     error: _lightFillColor,
     onError: _lightFillColor,
-    onPrimary: Color(0xFF7C7BBB),
-    onSecondary: Color(0xFF605FA3),
-    onTertiary: Color(0xFF241E30),
-    onTertiaryContainer: Color(0xFF241E30),
-    onSurface: Color(0xFF241E30),
+    onPrimary: Color(0xFF604039),
+    onSecondary: Color(0xFF604039),
+    onTertiary: Color(0xFF604039),
+    onSurface: Color(0xFFffefeb),
     brightness: Brightness.light,
   );
 
@@ -49,17 +47,19 @@ class AppThemeData {
   static const _bold = FontWeight.w700;
 
   static final TextTheme _textTheme = TextTheme(
-    headlineSmall: GoogleFonts.oswald(fontWeight: _medium, fontSize: 16.0),
-    headlineMedium: GoogleFonts.barlowCondensed(
-      fontSize: 40.0,
-      fontWeight: _semiBold,
-      fontStyle: FontStyle.italic,
-      color: colorScheme.primary,
-    ),
-    headlineLarge: GoogleFonts.montserrat(
-      fontSize: 50.0,
-      color: colorScheme.primary,
-    ),
+    headlineSmall: GoogleFonts.shrikhand(
+        fontWeight: _medium, fontSize: 30.0, color: colorScheme.surface),
+    headlineMedium: GoogleFonts.shrikhand(
+        fontWeight: _semiBold, fontSize: 40.0, color: colorScheme.surface),
+    headlineLarge: GoogleFonts.shrikhand(
+        fontWeight: _bold, fontSize: 60.0, color: colorScheme.surface),
+
+    titleSmall: GoogleFonts.montserrat(
+        fontWeight: _medium, fontSize: 14.0, color: colorScheme.surface),
+    titleMedium: GoogleFonts.montserrat(
+        fontWeight: _medium, fontSize: 20.0, color: colorScheme.surface),
+    titleLarge: GoogleFonts.montserrat(
+        fontWeight: _semiBold, fontSize: 30.0, color: colorScheme.surface),
 
     bodySmall: GoogleFonts.montserrat(fontWeight: _regular, fontSize: 14.0),
     bodyMedium: GoogleFonts.montserrat(fontWeight: _regular, fontSize: 16.0),
@@ -72,18 +72,5 @@ class AppThemeData {
     labelSmall: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 14.0),
     labelMedium: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 16.0),
     labelLarge: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 18.0),
-
-    titleSmall: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 14.0),
-    titleMedium: GoogleFonts.montserrat(
-      fontWeight: _medium,
-      fontSize: 20.0,
-      color: colorScheme.primary,
-    ),
-    titleLarge: GoogleFonts.montserrat(
-      fontSize: 30.0,
-      fontWeight: _bold,
-      fontStyle: FontStyle.italic,
-      color: colorScheme.primary,
-    ),
   );
 }

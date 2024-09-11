@@ -2,6 +2,5 @@ class Strings {
   Strings._();
 
   //General
-  static const String appName = "Jiggly";
-  static const String logoHeroTag = "logo";
+  static const String appName = "78Days";
 }

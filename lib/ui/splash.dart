@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Material(
       child: Center(
-        child: AppIconWidget(image: Assets.appLogoWithText, widthPct: 0.40),
+        child: AppIconWidget(image: Assets.appLogoNoText, widthPct: 0.40),
       ),
       color: AppThemeData.appTheme.primaryColor,
     );
