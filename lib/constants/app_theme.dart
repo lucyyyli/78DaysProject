@@ -26,12 +26,18 @@ class AppThemeData {
   }
 
   static const ColorScheme colorScheme = ColorScheme(
-    primary: Color(0xfff9b3ab),
-    primaryContainer: Color(0xFFae7d78),
+    // primary: Color(0xFFf9baab),
+    primary: Color(0xfff1999b),
+    primaryContainer: Color(0xFFe77375),
+    // primaryContainer: Color(0xFFB65256),
+    // primaryContainer: Color(0xFFae8278),
     secondary: Color(0xFFffefeb),
-    tertiary: Color(0xFFabf9bb),
-    tertiaryContainer: Color(0xFF78ae83),
-    surface: Color(0xFF604039),
+    secondaryContainer: Color(0xFFe77375),
+    // tertiary: Color(0xFFE6666B),
+    tertiary: Color(0xfff1999b),
+    tertiaryContainer: Color(0xFF6BAC3B),
+    surface: Color(0xFF512F2C),
+    // surface: Color(0xFF604039),
     error: _lightFillColor,
     onError: _lightFillColor,
     onPrimary: Color(0xFF604039),
@@ -52,23 +58,37 @@ class AppThemeData {
     headlineMedium: GoogleFonts.shrikhand(
         fontWeight: _semiBold, fontSize: 40.0, color: colorScheme.surface),
     headlineLarge: GoogleFonts.shrikhand(
-        fontWeight: _bold, fontSize: 60.0, color: colorScheme.surface),
-
+      fontWeight: _bold,
+      fontSize: 60.0,
+      color: colorScheme.tertiary,
+      shadows: <Shadow>[
+        Shadow(
+          offset: Offset(-5.0, 5.0),
+          blurRadius: 5.0,
+          color: colorScheme.tertiaryContainer,
+        ),
+        // Shadow(
+        //   offset: Offset(-3.0, 3.0),
+        //   blurRadius: 8.0,
+        //   color: Color.fromARGB(125, 0, 0, 255),
+        // )
+      ],
+    ),
     titleSmall: GoogleFonts.montserrat(
         fontWeight: _medium, fontSize: 14.0, color: colorScheme.surface),
     titleMedium: GoogleFonts.montserrat(
         fontWeight: _medium, fontSize: 20.0, color: colorScheme.surface),
     titleLarge: GoogleFonts.montserrat(
-        fontWeight: _semiBold, fontSize: 30.0, color: colorScheme.surface),
-
+        fontWeight: _semiBold,
+        fontSize: 30.0,
+        color: colorScheme.surface,
+    fontStyle: FontStyle.italic),
     bodySmall: GoogleFonts.montserrat(fontWeight: _regular, fontSize: 14.0),
     bodyMedium: GoogleFonts.montserrat(fontWeight: _regular, fontSize: 16.0),
     bodyLarge: GoogleFonts.montserrat(fontWeight: _regular, fontSize: 18.0),
-
     displaySmall: GoogleFonts.montserrat(fontWeight: _bold, fontSize: 14.0),
     displayMedium: GoogleFonts.montserrat(fontWeight: _bold, fontSize: 16.0),
     displayLarge: GoogleFonts.montserrat(fontWeight: _bold, fontSize: 18.0),
-
     labelSmall: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 14.0),
     labelMedium: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 16.0),
     labelLarge: GoogleFonts.montserrat(fontWeight: _medium, fontSize: 18.0),

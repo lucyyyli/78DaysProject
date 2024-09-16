@@ -73,22 +73,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   "78 Days",
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.headlineLarge,
-                  // style: TextStyle(
-                  //   shadows: <Shadow>[
-                  //     Shadow(
-                  //       offset: Offset(-3.0, 3.0),
-                  //       blurRadius: 3.0,
-                  //       color: Theme.of(context).colorScheme.secondaryContainer,
-                  //     ),
-                  //     Shadow(
-                  //       offset: Offset(-3.0, 3.0),
-                  //       blurRadius: 8.0,
-                  //       color: Color.fromARGB(125, 0, 0, 255),
-                  //     )
-                  //   ],
-                  //   color: Theme.of(context).colorScheme.primaryContainer,
-                  //   // fontStyle: Theme.of(context).textTheme.headlineLarge,
-                  // ),
                 )),
             SizedBox(height: 30),
             Container(
@@ -102,9 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 boxShadow: [
                   BoxShadow(
                     color: AppThemeData.appTheme.colorScheme.primaryContainer,
-                    spreadRadius: 4,
+                    spreadRadius: 5,
                     blurRadius: 0,
-                    offset: Offset(-2, 3), // changes position of shadow
+                    offset: Offset(-2, 2), // changes position of shadow
                   )
                 ],
                 image: DecorationImage(
@@ -118,18 +102,18 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.all(5.0),
               width: 230,
               decoration: BoxDecoration(
+                color: AppThemeData.appTheme.colorScheme.tertiary,
                 borderRadius: BorderRadius.all(
                   Radius.circular(15),
                 ),
                 boxShadow: [
                   BoxShadow(
                     color: AppThemeData.appTheme.colorScheme.tertiaryContainer,
-                    spreadRadius: 3,
+                    spreadRadius: 5,
                     blurRadius: 0,
-                    offset: Offset(-2, 3), // changes position of shadow
+                    offset: Offset(-2, 2), // changes position of shadow
                   )
                 ],
-                color: AppThemeData.appTheme.colorScheme.tertiary,
               ),
               child: TextButton(
                 onPressed: () {
