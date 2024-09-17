@@ -26,24 +26,19 @@ class AppThemeData {
   }
 
   static const ColorScheme colorScheme = ColorScheme(
-    // primary: Color(0xFFf9baab),
     primary: Color(0xfff1999b),
     primaryContainer: Color(0xFFe77375),
-    // primaryContainer: Color(0xFFB65256),
-    // primaryContainer: Color(0xFFae8278),
     secondary: Color(0xFFffefeb),
     secondaryContainer: Color(0xFFe77375),
-    // tertiary: Color(0xFFE6666B),
     tertiary: Color(0xfff1999b),
     tertiaryContainer: Color(0xFF6BAC3B),
-    surface: Color(0xFF512F2C),
-    // surface: Color(0xFF604039),
+    surface: Color(0xFF5E3734),
     error: _lightFillColor,
     onError: _lightFillColor,
-    onPrimary: Color(0xFF604039),
-    onSecondary: Color(0xFF604039),
-    onTertiary: Color(0xFF604039),
-    onSurface: Color(0xFFffefeb),
+    onPrimary: Color(0xFF5E3734),
+    onSecondary: Color(0xFF5E3734),
+    onTertiary: Color(0xFF5E3734),
+    onSurface: Color(0xfff1999b),
     brightness: Brightness.light,
   );
 
