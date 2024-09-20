@@ -12,14 +12,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   var pics = [
-    Assets.appLogoNoText,
-    Assets.appLogoWithText,
-    Assets.cat,
-    Assets.alien,
-    Assets.box,
-    Assets.dino
+    Assets.img_6738,
+    Assets.img_6737,
+    Assets.img_6739,
+    Assets.img_6740,
+    Assets.img_6741,
+    Assets.img_6742,
+    Assets.img_6743,
+    Assets.img_6744,
+    Assets.img_6745,
+    Assets.img_6747,
+    Assets.img_6748,
+    Assets.img_6750,
+    Assets.img_6751,
   ];
-  var unusedPics = [1, 2, 3, 4, 5];
+  var unusedPics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   var usedPics = <int>[0];
   var currPic = 0;
 
@@ -125,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       usedPics = <int>[];
 
                     }
-                    if (unusedPics.length == 6) {
+                    if (unusedPics.length == pics.length) {
                       currPic = 0;
                       usedPics.add(0);
                       unusedPics.remove(0);
