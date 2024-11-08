@@ -54,7 +54,7 @@ class AppThemeData {
         fontWeight: _semiBold, fontSize: 40.0, color: colorScheme.surface),
     headlineLarge: GoogleFonts.shrikhand(
       fontWeight: _bold,
-      fontSize: 60.0,
+      fontSize: 50.0,
       color: colorScheme.tertiary,
       shadows: <Shadow>[
         Shadow(
@@ -70,9 +70,9 @@ class AppThemeData {
       ],
     ),
     titleSmall: GoogleFonts.montserrat(
-        fontWeight: _medium, fontSize: 14.0, color: colorScheme.surface),
+        fontWeight: _medium, fontSize: 18.0, color: colorScheme.surface),
     titleMedium: GoogleFonts.montserrat(
-        fontWeight: _medium, fontSize: 20.0, color: colorScheme.surface),
+        fontWeight: _medium, fontSize: 20.0, color: colorScheme.surface, fontStyle: FontStyle.italic),
     titleLarge: GoogleFonts.montserrat(
         fontWeight: _semiBold,
         fontSize: 30.0,

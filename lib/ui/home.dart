@@ -1,5 +1,6 @@
 import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_animations/animation_builder/mirror_animation_builder.dart';
 import '../constants/app_theme.dart';
 import '../constants/assets.dart';
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
                 child: Text(
-                  "78 Days",
+                  "Multiverse Explorer",
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.headlineLarge,
                 )),
@@ -105,59 +106,169 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 30),
-            Container(
-              padding: EdgeInsets.all(5.0),
-              width: 230,
-              decoration: BoxDecoration(
-                color: AppThemeData.appTheme.colorScheme.tertiary,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(5.0),
+                  width: 230,
+                  decoration: BoxDecoration(
+                    color: AppThemeData.appTheme.colorScheme.tertiary,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(15),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color:
+                            AppThemeData.appTheme.colorScheme.tertiaryContainer,
+                        spreadRadius: 5,
+                        blurRadius: 0,
+                        offset: Offset(-2, 2), // changes position of shadow
+                      )
+                    ],
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        dev.log("unused length:" +
+                            unusedPics.length.toString() +
+                            "used length: " +
+                            usedPics.length.toString());
+                        if (unusedPics.length == 0) {
+                          unusedPics = usedPics;
+                          usedPics = <int>[];
+                        }
+                        if (unusedPics.length == pics.length) {
+                          currPic = 0;
+                          usedPics.add(0);
+                          unusedPics.remove(0);
+                          dev.log("currPic: " + currPic.toString());
+                        } else {
+                          var random = Random().nextInt(unusedPics.length);
+                          currPic = unusedPics[random];
+                          dev.log("currPic: " + currPic.toString());
+                          unusedPics.removeAt(random);
+                          usedPics.add(currPic);
+                          dev.log("unused length:" +
+                              unusedPics.length.toString() +
+                              "used length: " +
+                              usedPics.length.toString());
+                        }
+                      });
+                    },
+                    style: ButtonStyle(),
+                    child: Text(
+                      "New Variant",
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppThemeData.appTheme.colorScheme.tertiaryContainer,
-                    spreadRadius: 5,
-                    blurRadius: 0,
-                    offset: Offset(-2, 2), // changes position of shadow
-                  )
-                ],
-              ),
-              child: TextButton(
-                onPressed: () {
-                  setState(() {
-                    dev.log("unused length:" + unusedPics.length.toString() +
-                        "used length: " + usedPics.length.toString());
-                    if (unusedPics.length == 0) {
-                      unusedPics = usedPics;
-                      usedPics = <int>[];
-
-                    }
-                    if (unusedPics.length == pics.length) {
-                      currPic = 0;
-                      usedPics.add(0);
-                      unusedPics.remove(0);
-                      dev.log("currPic: " + currPic.toString());
-                    } else {
-                      var random = Random().nextInt(unusedPics.length);
-                      currPic = unusedPics[random];
-                      dev.log("currPic: " + currPic.toString());
-                      unusedPics.removeAt(random);
-                      usedPics.add(currPic);
-                      dev.log("unused length:" + unusedPics.length.toString() +
-                          "used length: " + usedPics.length.toString());
-                    }
-                  });
-                },
-                style: ButtonStyle(),
-                child: Text(
-                  "Get Groovy!",
-                  style: Theme.of(context).textTheme.titleLarge,
+                SizedBox(width: 20),
+                Container(
+                  padding: EdgeInsets.all(5.0),
+                  width: 100,
+                  decoration: BoxDecoration(
+                    color: AppThemeData.appTheme.colorScheme.tertiary,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(15),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color:
+                            AppThemeData.appTheme.colorScheme.tertiaryContainer,
+                        spreadRadius: 5,
+                        blurRadius: 0,
+                        offset: Offset(-2, 2), // changes position of shadow
+                      )
+                    ],
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      dev.log("Info button pressed");
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return infoDialog();
+                        },
+                      );
+                    },
+                    style: ButtonStyle(),
+                    child: Text(
+                      "Info",
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget infoDialog() {
+    return AlertDialog(
+      title: RichText(
+        text: TextSpan(
+          style: GoogleFonts.montserrat(
+              fontSize: 20.0,
+              fontWeight: FontWeight.w700,
+              color: Theme.of(context).colorScheme.surface),
+          children: <TextSpan>[
+            TextSpan(text: "What is this?"),
+          ],
+        ),
+      ),
+      titleTextStyle: Theme.of(context).textTheme.titleMedium,
+      contentTextStyle: Theme.of(context).textTheme.titleSmall,
+      content: Container(
+          height: 235,
+          child: RichText(
+            text: TextSpan(
+              style: GoogleFonts.montserrat(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.surface),
+              children: <TextSpan>[
+                TextSpan(
+                  text: '变',
+                  style: const TextStyle(fontWeight: FontWeight.w700),
+                ),
+                TextSpan(
+                  text: ': To change, transform, become.\n\n',
+                  style: const TextStyle(fontStyle: FontStyle.italic),
+                ),
+                TextSpan(text: 'Inspired by the wacky alternate universes of '),
+                TextSpan(
+                  text: 'Everything Everywhere All at Once',
+                  style: const TextStyle(fontStyle: FontStyle.italic),
+                ),
+                TextSpan(
+                    text:
+                        ', explore the variants of 变 through the vast and absurd multiverse.'),
+              ],
+            ),
+          )),
+      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      actions: <Widget>[
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: RichText(
+            text: TextSpan(
+              style: GoogleFonts.montserrat(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w700,
+                  color: Theme.of(context).colorScheme.surface),
+              children: <TextSpan>[
+                TextSpan(text: "Start exploring"),
+                ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
