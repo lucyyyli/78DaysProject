@@ -12,22 +12,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var pics = [
-    Assets.img_6738,
-    Assets.img_6737,
-    Assets.img_6739,
-    Assets.img_6740,
-    Assets.img_6741,
-    Assets.img_6742,
-    Assets.img_6743,
-    Assets.img_6744,
-    Assets.img_6745,
-    Assets.img_6747,
-    Assets.img_6748,
-    Assets.img_6750,
-    Assets.img_6751,
-  ];
-  var unusedPics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+  static var numPics = 70;
+  var unusedPics = [for (var i = 1; i < numPics; i++) i];
   var usedPics = <int>[0];
   var currPic = 0;
 
@@ -100,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
                 image: DecorationImage(
-                  image: AssetImage(pics[currPic]),
+                  image: AssetImage(Assets.pics[currPic]),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -138,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           unusedPics = usedPics;
                           usedPics = <int>[];
                         }
-                        if (unusedPics.length == pics.length) {
+                        if (unusedPics.length == Assets.pics.length) {
                           currPic = 0;
                           usedPics.add(0);
                           unusedPics.remove(0);
@@ -236,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
                 TextSpan(
-                  text: ': To change, transform, become.\n\n',
+                  text: ': To change, transform, make appear.\n\n',
                   style: const TextStyle(fontStyle: FontStyle.italic),
                 ),
                 TextSpan(text: 'Inspired by the wacky alternate universes of '),
